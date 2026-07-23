@@ -29,9 +29,9 @@ export function Divider({ className = "" }: { className?: string }) {
   );
 }
 
-export function Star({ className = "" }: { className?: string }) {
+export function Star({ className = "", style }: { className?: string; style?: React.CSSProperties }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
+    <svg viewBox="0 0 24 24" className={className} style={style} fill="currentColor" aria-hidden>
       <path d="M12 2 L13 10 L21 12 L13 14 L12 22 L11 14 L3 12 L11 10 Z" />
     </svg>
   );

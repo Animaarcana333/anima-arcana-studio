@@ -71,7 +71,7 @@ function Legal() {
       <PageHeader eyebrow="Fine print" title={page.title} />
       <section className="mx-auto max-w-2xl px-6 pb-24">
         <div className="space-y-6 text-ink/80">
-          {page.body.map((p, i) => <p key={i}>{p}</p>)}
+          {page.body.map((p: string, i: number) => <p key={i}>{p}</p>)}
         </div>
       </section>
     </PageShell>

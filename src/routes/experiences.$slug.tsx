@@ -63,7 +63,7 @@ function ExperienceDetail() {
 
       <section className="mx-auto max-w-3xl px-6 py-24">
         <div className="space-y-14">
-          {exp.sections.map((s) => (
+          {exp.sections.map((s: { title: string; body: string }) => (
             <div key={s.title} className="border-t border-burgundy/15 pt-8">
               <h2 className="font-display text-3xl text-burgundy sm:text-4xl">{s.title}</h2>
               <p className="mt-4 text-ink/80 leading-relaxed">{s.body}</p>
@@ -95,7 +95,7 @@ function ExperienceDetail() {
         <Divider className="mb-12" />
         <h2 className="text-center font-display text-4xl text-burgundy sm:text-5xl">What this experience may support</h2>
         <ul className="mt-10 grid gap-4 sm:grid-cols-2">
-          {exp.supports.map((s) => (
+          {exp.supports.map((s: string) => (
             <li key={s} className="flex items-start gap-3 border border-burgundy/15 bg-cream/60 p-5">
               <span className="mt-1.5 block h-1.5 w-1.5 rotate-45 bg-burgundy" />
               <span className="text-ink/80">{s}</span>
@@ -107,7 +107,7 @@ function ExperienceDetail() {
       <section className="mx-auto max-w-3xl px-6 py-16">
         <h2 className="text-center font-display text-4xl text-burgundy sm:text-5xl">Questions often asked</h2>
         <div className="mt-10 divide-y divide-burgundy/15 border-y border-burgundy/15">
-          {exp.faq.map((f) => (
+          {exp.faq.map((f: { q: string; a: string }) => (
             <details key={f.q} className="group py-6">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-6">
                 <span className="font-display text-xl text-burgundy">{f.q}</span>

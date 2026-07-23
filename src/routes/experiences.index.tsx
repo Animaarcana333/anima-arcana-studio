@@ -3,7 +3,7 @@ import { PageShell, PageHeader } from "@/components/PageShell";
 import { EXPERIENCES } from "@/lib/experiences";
 import { Divider } from "@/components/Emblem";
 
-export const Route = createFileRoute("/experiences")({
+export const Route = createFileRoute("/experiences/")({
   head: () => ({
     meta: [
       { title: "Experiences — Anima Arcana" },
