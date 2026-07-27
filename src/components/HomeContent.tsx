@@ -29,25 +29,15 @@ type PathwayMedia = {
   offerings: { path: string }[];
 };
 
-function buildPathwayMedia(paths: ReturnType<typeof PAGE_PATHS.experiences.en> extends string ? never : never, exp: (slug: string) => string, page: (k: keyof typeof PAGE_PATHS) => string): PathwayMedia[] {
+function buildPathwayMedia(
+  exp: (slug: string) => string,
+  page: (k: keyof typeof PAGE_PATHS) => string,
+): PathwayMedia[] {
   return [
-    {
-      src: returningBody.url,
-      offerings: [{ path: exp("returning-body") }, { path: exp("tvm") }],
-    },
-    {
-      src: tarot.url,
-      offerings: [{ path: exp("tarot") }],
-    },
-    {
-      src: reiki.url,
-      objectPosition: "50% 30%",
-      offerings: [{ path: exp("reiki") }],
-    },
-    {
-      src: kundalini.url,
-      offerings: [{ path: exp("kundalini") }],
-    },
+    { src: returningBody.url, offerings: [{ path: exp("returning-body") }, { path: exp("tvm") }] },
+    { src: tarot.url, offerings: [{ path: exp("tarot") }] },
+    { src: reiki.url, objectPosition: "50% 30%", offerings: [{ path: exp("reiki") }] },
+    { src: kundalini.url, offerings: [{ path: exp("kundalini") }] },
     {
       src: bodyEarth.url,
       credit: "Model · @the.soma.mystic",
@@ -59,6 +49,7 @@ function buildPathwayMedia(paths: ReturnType<typeof PAGE_PATHS.experiences.en> e
     },
   ];
 }
+
 
 export function HomeContent() {
   const { locale, t } = useI18n();
