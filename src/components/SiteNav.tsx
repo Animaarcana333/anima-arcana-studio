@@ -134,12 +134,8 @@ export function SiteNav() {
               ))}
             </div>
 
-            <Link
-              to={PAGE_PATHS.experiences[locale]}
-              className="hidden md:inline-flex items-center border border-burgundy px-5 py-2.5 text-[11px] uppercase tracking-[0.24em] text-burgundy hover:bg-burgundy hover:text-cream transition-colors duration-500"
-            >
-              {t.nav.bookCta}
-            </Link>
+
+
 
             {/* Mobile language button */}
             <button
