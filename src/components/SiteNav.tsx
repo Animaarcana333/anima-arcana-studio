@@ -255,6 +255,3 @@ export function SiteNav() {
   );
 }
 
-    </>
-  );
-}
