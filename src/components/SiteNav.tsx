@@ -249,23 +249,12 @@ export function SiteNav() {
             ))}
           </div>
 
-          <Link
-            to={PAGE_PATHS.experiences[locale]}
-            onClick={() => setOpen(false)}
-            className="mt-10 self-start border border-burgundy px-8 py-4 text-[11px] uppercase tracking-[0.28em] text-burgundy"
-          >
-            {t.nav.bookCta}
-          </Link>
         </div>
       </div>
+    </>
+  );
+}
 
-      {/* Mobile sticky bottom CTA */}
-      <Link
-        to={PAGE_PATHS.experiences[locale]}
-        className="fixed inset-x-4 bottom-4 z-20 md:hidden inline-flex items-center justify-center bg-burgundy py-4 text-[11px] uppercase tracking-[0.28em] text-cream shadow-2xl"
-      >
-        {t.nav.bookCta}
-      </Link>
     </>
   );
 }
