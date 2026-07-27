@@ -57,7 +57,7 @@ export function HomeContent() {
 
   const exp = (slug: string) => `${PAGE_PATHS.experiences[locale]}/${slug}`;
   const page = (k: keyof typeof PAGE_PATHS) => PAGE_PATHS[k][locale];
-  const pathwayMedia = buildPathwayMedia(undefined as never, exp, page);
+  const pathwayMedia = buildPathwayMedia(exp, page);
 
   return (
     <PageShell>
