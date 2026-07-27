@@ -197,8 +197,6 @@ const es: Dict = {
     heroTitle1: "Regresa al cuerpo.",
     heroTitle2: "Escucha al alma.",
     heroSub: "Sanación encarnada, guía intuitiva y experiencias rituales en comunión con la naturaleza.",
-    heroCtaExplore: "Explora los caminos",
-    heroCtaBook: "Reserva una Experiencia",
     introEyebrow: "Bienvenidos",
     introTitle: "Bienvenidos a Anima Arcana",
     introP1: "Un lugar donde el cuerpo, el alma y la naturaleza recuerdan que nunca estuvieron separados.",
@@ -206,13 +204,18 @@ const es: Dict = {
       "Pasamos gran parte de nuestra vida buscando fuera de nosotros: respuestas, sanación, dirección y un lugar al cual pertenecer. Anima Arcana nació de una pregunta diferente: ¿y si todo lo que estamos buscando ya viviera dentro de nosotros, esperando simplemente ser recordado?",
     introP2: "Aquí, sanar no es un destino.",
     introP3a: "Es un regreso.",
-    introP3b: "",
     introP4:
       "A través del tacto, los símbolos, el ritual, el movimiento, las plantas y la presencia, cada experiencia se convierte en una invitación a escuchar más profundamente la sabiduría que ya vive en ti.",
+    offersEyebrow: "Anima Arcana ofrece",
+    offersTitle: "Lo que vive dentro de estos caminos",
+    offersP1:
+      "Sanación corporal, trabajo energético, guía intuitiva, fotografía ritual, preparados botánicos y formación en tarot.",
+    offersP2:
+      "A través del trabajo corporal, las prácticas para el sistema nervioso, Reiki, la Activación de la Fuerza Vital Kundalini, el tarot, la fotografía y la sabiduría de las plantas, cada camino ofrece una manera diferente de regresar a ti.",
     welcomeHome: "Bienvenido a casa.",
     pathwaysEyebrow: "Seis caminos",
     pathwaysTitle: "Elige tu Camino",
-    pathwaysCta: "Descubre más",
+    pathwaysCta: "Entra en este camino",
     pathways: [
       {
         eyebrow: "Camino I",
@@ -241,7 +244,7 @@ const es: Dict = {
       {
         eyebrow: "Camino V",
         title: "Vuélvete Parte de la Naturaleza",
-        offerings: ["Cuerpo y Tierra"],
+        offerings: ["Fotografía Ritual Cuerpo y Tierra"],
         quote: "Donde el paisaje recuerda tu forma original.",
       },
       {
@@ -252,9 +255,9 @@ const es: Dict = {
       },
     ],
     finalTitle: "¿Estás lista para regresar a lo que vive dentro de ti?",
-    finalCta: "Reserva una Experiencia",
   },
 };
+
 
 const it: Dict = {
   nav: {
