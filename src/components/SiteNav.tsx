@@ -57,10 +57,13 @@ export function SiteNav() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-40 transition-all duration-500 ${
-          scrolled ? "bg-cream/90 backdrop-blur-md border-b border-burgundy/15" : "bg-transparent"
+        className={`fixed inset-x-0 top-0 z-40 border-b transition-all duration-500 ${
+          scrolled
+            ? "bg-cream/95 backdrop-blur-md border-burgundy/25 shadow-[0_1px_0_0_rgba(74,14,10,0.08)]"
+            : "bg-cream/70 backdrop-blur-sm border-burgundy/15"
         }`}
       >
+
         <div className="mx-auto grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:flex lg:max-w-[1400px] lg:justify-between lg:px-10">
           <Link
             to={PAGE_PATHS.home[locale]}
@@ -131,12 +134,8 @@ export function SiteNav() {
               ))}
             </div>
 
-            <Link
-              to={PAGE_PATHS.experiences[locale]}
-              className="hidden md:inline-flex items-center border border-burgundy px-5 py-2.5 text-[11px] uppercase tracking-[0.24em] text-burgundy hover:bg-burgundy hover:text-cream transition-colors duration-500"
-            >
-              {t.nav.bookCta}
-            </Link>
+
+
 
             {/* Mobile language button */}
             <button
@@ -250,23 +249,9 @@ export function SiteNav() {
             ))}
           </div>
 
-          <Link
-            to={PAGE_PATHS.experiences[locale]}
-            onClick={() => setOpen(false)}
-            className="mt-10 self-start border border-burgundy px-8 py-4 text-[11px] uppercase tracking-[0.28em] text-burgundy"
-          >
-            {t.nav.bookCta}
-          </Link>
         </div>
       </div>
-
-      {/* Mobile sticky bottom CTA */}
-      <Link
-        to={PAGE_PATHS.experiences[locale]}
-        className="fixed inset-x-4 bottom-4 z-20 md:hidden inline-flex items-center justify-center bg-burgundy py-4 text-[11px] uppercase tracking-[0.28em] text-cream shadow-2xl"
-      >
-        {t.nav.bookCta}
-      </Link>
     </>
   );
 }
+

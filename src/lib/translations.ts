@@ -55,16 +55,17 @@ type Dict = {
     heroTitle1: string;
     heroTitle2: string;
     heroSub: string;
-    heroCtaExplore: string;
-    heroCtaBook: string;
     introEyebrow: string;
     introTitle: string;
     introP1: string;
     introQuestion: string;
     introP2: string;
     introP3a: string;
-    introP3b: string;
     introP4: string;
+    offersEyebrow: string;
+    offersTitle: string;
+    offersP1: string;
+    offersP2: string;
     welcomeHome: string;
     pathwaysEyebrow: string;
     pathwaysTitle: string;
@@ -76,9 +77,9 @@ type Dict = {
       quote: string;
     }>;
     finalTitle: string;
-    finalCta: string;
   };
 };
+
 
 const en: Dict = {
   nav: {
@@ -107,8 +108,6 @@ const en: Dict = {
     heroTitle1: "Return to the body.",
     heroTitle2: "Listen to the soul.",
     heroSub: "Embodied healing, intuitive guidance and ritual experiences in communion with nature.",
-    heroCtaExplore: "Explore the pathways",
-    heroCtaBook: "Book an Experience",
     introEyebrow: "Welcome",
     introTitle: "Welcome to Anima Arcana",
     introP1: "A place where body, soul and nature remember they were never separate.",
@@ -116,13 +115,18 @@ const en: Dict = {
       "We spend so much of our lives searching outside ourselves — for answers, healing, direction and belonging. Anima Arcana was born from a different question: what if everything we are looking for is already within us, simply waiting to be remembered?",
     introP2: "Here, healing is not a destination.",
     introP3a: "It is a return.",
-    introP3b: "",
     introP4:
       "Through touch, symbolism, ritual, movement, plants and presence, every experience becomes an invitation to listen more deeply to the wisdom already living within you.",
+    offersEyebrow: "Anima Arcana offers",
+    offersTitle: "What lives within these pathways",
+    offersP1:
+      "Embodied healing, energy work, intuitive guidance, ritual photography, botanical preparations and tarot education.",
+    offersP2:
+      "Through bodywork, nervous-system practices, Reiki, Kundalini Life Force Activation, tarot, photography and plant wisdom, each pathway offers a different way to return to yourself.",
     welcomeHome: "Welcome home.",
     pathwaysEyebrow: "Six pathways",
     pathwaysTitle: "Choose Your Path",
-    pathwaysCta: "Learn more",
+    pathwaysCta: "Enter this path",
     pathways: [
       {
         eyebrow: "Pathway I",
@@ -151,7 +155,7 @@ const en: Dict = {
       {
         eyebrow: "Pathway V",
         title: "Become Part of Nature",
-        offerings: ["Body & Earth"],
+        offerings: ["Body & Earth Ritual Photography"],
         quote: "Where the landscape remembers your original shape.",
       },
       {
@@ -162,9 +166,9 @@ const en: Dict = {
       },
     ],
     finalTitle: "Are you ready to return to what lives within?",
-    finalCta: "Book an Experience",
   },
 };
+
 
 const es: Dict = {
   nav: {
@@ -193,8 +197,6 @@ const es: Dict = {
     heroTitle1: "Regresa al cuerpo.",
     heroTitle2: "Escucha al alma.",
     heroSub: "Sanación encarnada, guía intuitiva y experiencias rituales en comunión con la naturaleza.",
-    heroCtaExplore: "Explora los caminos",
-    heroCtaBook: "Reserva una Experiencia",
     introEyebrow: "Bienvenidos",
     introTitle: "Bienvenidos a Anima Arcana",
     introP1: "Un lugar donde el cuerpo, el alma y la naturaleza recuerdan que nunca estuvieron separados.",
@@ -202,13 +204,18 @@ const es: Dict = {
       "Pasamos gran parte de nuestra vida buscando fuera de nosotros: respuestas, sanación, dirección y un lugar al cual pertenecer. Anima Arcana nació de una pregunta diferente: ¿y si todo lo que estamos buscando ya viviera dentro de nosotros, esperando simplemente ser recordado?",
     introP2: "Aquí, sanar no es un destino.",
     introP3a: "Es un regreso.",
-    introP3b: "",
     introP4:
       "A través del tacto, los símbolos, el ritual, el movimiento, las plantas y la presencia, cada experiencia se convierte en una invitación a escuchar más profundamente la sabiduría que ya vive en ti.",
+    offersEyebrow: "Anima Arcana ofrece",
+    offersTitle: "Lo que vive dentro de estos caminos",
+    offersP1:
+      "Sanación corporal, trabajo energético, guía intuitiva, fotografía ritual, preparados botánicos y formación en tarot.",
+    offersP2:
+      "A través del trabajo corporal, las prácticas para el sistema nervioso, Reiki, la Activación de la Fuerza Vital Kundalini, el tarot, la fotografía y la sabiduría de las plantas, cada camino ofrece una manera diferente de regresar a ti.",
     welcomeHome: "Bienvenido a casa.",
     pathwaysEyebrow: "Seis caminos",
     pathwaysTitle: "Elige tu Camino",
-    pathwaysCta: "Descubre más",
+    pathwaysCta: "Entra en este camino",
     pathways: [
       {
         eyebrow: "Camino I",
@@ -237,7 +244,7 @@ const es: Dict = {
       {
         eyebrow: "Camino V",
         title: "Vuélvete Parte de la Naturaleza",
-        offerings: ["Cuerpo y Tierra"],
+        offerings: ["Fotografía Ritual Cuerpo y Tierra"],
         quote: "Donde el paisaje recuerda tu forma original.",
       },
       {
@@ -248,9 +255,9 @@ const es: Dict = {
       },
     ],
     finalTitle: "¿Estás lista para regresar a lo que vive dentro de ti?",
-    finalCta: "Reserva una Experiencia",
   },
 };
+
 
 const it: Dict = {
   nav: {
@@ -279,8 +286,6 @@ const it: Dict = {
     heroTitle1: "Ritorna al corpo.",
     heroTitle2: "Ascolta l'anima.",
     heroSub: "Guarigione incarnata, guida intuitiva ed esperienze rituali in comunione con la natura.",
-    heroCtaExplore: "Esplora i cammini",
-    heroCtaBook: "Prenota un'Esperienza",
     introEyebrow: "Benvenuti",
     introTitle: "Benvenuti ad Anima Arcana",
     introP1: "Un luogo in cui il corpo, l'anima e la natura ricordano di non essere mai stati separati.",
@@ -288,13 +293,18 @@ const it: Dict = {
       "Trascorriamo gran parte della nostra vita cercando fuori di noi: risposte, guarigione, direzione e un luogo a cui appartenere. Anima Arcana è nata da una domanda diversa: e se tutto ciò che stiamo cercando vivesse già dentro di noi, semplicemente in attesa di essere ricordato?",
     introP2: "Qui, la guarigione non è una destinazione.",
     introP3a: "È un ritorno.",
-    introP3b: "",
     introP4:
       "Attraverso il tocco, i simboli, il rituale, il movimento, le piante e la presenza, ogni esperienza diventa un invito ad ascoltare più profondamente la saggezza che vive già dentro di te.",
+    offersEyebrow: "Anima Arcana offre",
+    offersTitle: "Ciò che vive dentro questi cammini",
+    offersP1:
+      "Pratiche corporee, lavoro energetico, guida intuitiva, fotografia rituale, preparazioni botaniche e formazione nei tarocchi.",
+    offersP2:
+      "Attraverso il lavoro sul corpo, le pratiche dedicate al sistema nervoso, il Reiki, l'Attivazione della Forza Vitale Kundalini, i tarocchi, la fotografia e la saggezza delle piante, ogni cammino offre un modo diverso di ritornare a te.",
     welcomeHome: "Bentornato a casa.",
     pathwaysEyebrow: "Sei cammini",
     pathwaysTitle: "Scegli il tuo Cammino",
-    pathwaysCta: "Scopri di più",
+    pathwaysCta: "Entra in questo cammino",
     pathways: [
       {
         eyebrow: "Cammino I",
@@ -323,7 +333,7 @@ const it: Dict = {
       {
         eyebrow: "Cammino V",
         title: "Diventa Parte della Natura",
-        offerings: ["Corpo e Terra"],
+        offerings: ["Fotografia Rituale Corpo e Terra"],
         quote: "Dove il paesaggio ricorda la tua forma originaria.",
       },
       {
@@ -334,8 +344,8 @@ const it: Dict = {
       },
     ],
     finalTitle: "Sei pronto a ritornare a ciò che vive dentro di te?",
-    finalCta: "Prenota un'Esperienza",
   },
 };
+
 
 export const TRANSLATIONS: Record<Locale, Dict> = { en, es, it };

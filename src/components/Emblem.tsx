@@ -1,16 +1,41 @@
-import emblemSrc from "@/assets/emblem.png";
+import logoFull from "@/assets/photos/logo-full.png.asset.json";
+import signature from "@/assets/photos/signature.png.asset.json";
 
 type Props = { className?: string; size?: number };
 
 export function Emblem({ className, size = 48 }: Props) {
   return (
     <img
-      src={emblemSrc}
+      src={logoFull.url}
       alt=""
       aria-hidden
       width={size}
       height={size}
       className={className}
+      style={{ width: size, height: size }}
+    />
+  );
+}
+
+/**
+ * Discreet burgundy signature watermark placed on ritual photography.
+ * Positioned bottom-right by default; pass className to override.
+ */
+export function Watermark({
+  className = "",
+  size = 44,
+}: {
+  className?: string;
+  size?: number;
+}) {
+  return (
+    <img
+      src={signature.url}
+      alt=""
+      aria-hidden
+      width={size}
+      height={size}
+      className={`pointer-events-none absolute bottom-4 right-4 opacity-60 mix-blend-multiply sm:bottom-6 sm:right-6 ${className}`}
       style={{ width: size, height: size }}
     />
   );
