@@ -58,9 +58,10 @@
   --burgundy: oklch(0.32 0.11 24);   /* #4A0E0A ish */
   --wine: oklch(0.36 0.115 22);
   --terracotta: oklch(0.52 0.09 42);
-  --cream: oklch(0.96 0.012 82);      /* #F5F1EB */
-  --parchment: oklch(0.92 0.018 78);  /* #EAE1D5 */
-  --sand: oklch(0.84 0.03 75);        /* #D8C8B7 */
+  --cream: #F1E7D6;                    /* ivory — primary ground */
+  --parchment: #E8DAC2;                /* warmer parchment for sections */
+  --sand: #D8C4A4;                     /* deeper sand accent */
+
   --forest: oklch(0.48 0.035 145);
   --gold: oklch(0.72 0.11 82);        /* #C4A25A */
   --ink: oklch(0.22 0.02 40);         /* #271C19 */
