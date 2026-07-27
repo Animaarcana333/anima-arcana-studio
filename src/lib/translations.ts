@@ -55,16 +55,17 @@ type Dict = {
     heroTitle1: string;
     heroTitle2: string;
     heroSub: string;
-    heroCtaExplore: string;
-    heroCtaBook: string;
     introEyebrow: string;
     introTitle: string;
     introP1: string;
     introQuestion: string;
     introP2: string;
     introP3a: string;
-    introP3b: string;
     introP4: string;
+    offersEyebrow: string;
+    offersTitle: string;
+    offersP1: string;
+    offersP2: string;
     welcomeHome: string;
     pathwaysEyebrow: string;
     pathwaysTitle: string;
@@ -76,9 +77,9 @@ type Dict = {
       quote: string;
     }>;
     finalTitle: string;
-    finalCta: string;
   };
 };
+
 
 const en: Dict = {
   nav: {
