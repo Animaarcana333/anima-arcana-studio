@@ -108,8 +108,6 @@ const en: Dict = {
     heroTitle1: "Return to the body.",
     heroTitle2: "Listen to the soul.",
     heroSub: "Embodied healing, intuitive guidance and ritual experiences in communion with nature.",
-    heroCtaExplore: "Explore the pathways",
-    heroCtaBook: "Book an Experience",
     introEyebrow: "Welcome",
     introTitle: "Welcome to Anima Arcana",
     introP1: "A place where body, soul and nature remember they were never separate.",
@@ -117,13 +115,18 @@ const en: Dict = {
       "We spend so much of our lives searching outside ourselves — for answers, healing, direction and belonging. Anima Arcana was born from a different question: what if everything we are looking for is already within us, simply waiting to be remembered?",
     introP2: "Here, healing is not a destination.",
     introP3a: "It is a return.",
-    introP3b: "",
     introP4:
       "Through touch, symbolism, ritual, movement, plants and presence, every experience becomes an invitation to listen more deeply to the wisdom already living within you.",
+    offersEyebrow: "Anima Arcana offers",
+    offersTitle: "What lives within these pathways",
+    offersP1:
+      "Embodied healing, energy work, intuitive guidance, ritual photography, botanical preparations and tarot education.",
+    offersP2:
+      "Through bodywork, nervous-system practices, Reiki, Kundalini Life Force Activation, tarot, photography and plant wisdom, each pathway offers a different way to return to yourself.",
     welcomeHome: "Welcome home.",
     pathwaysEyebrow: "Six pathways",
     pathwaysTitle: "Choose Your Path",
-    pathwaysCta: "Learn more",
+    pathwaysCta: "Enter this path",
     pathways: [
       {
         eyebrow: "Pathway I",
@@ -152,7 +155,7 @@ const en: Dict = {
       {
         eyebrow: "Pathway V",
         title: "Become Part of Nature",
-        offerings: ["Body & Earth"],
+        offerings: ["Body & Earth Ritual Photography"],
         quote: "Where the landscape remembers your original shape.",
       },
       {
@@ -163,9 +166,9 @@ const en: Dict = {
       },
     ],
     finalTitle: "Are you ready to return to what lives within?",
-    finalCta: "Book an Experience",
   },
 };
+
 
 const es: Dict = {
   nav: {
