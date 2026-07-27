@@ -57,10 +57,13 @@ export function SiteNav() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-40 transition-all duration-500 ${
-          scrolled ? "bg-cream/90 backdrop-blur-md border-b border-burgundy/15" : "bg-transparent"
+        className={`fixed inset-x-0 top-0 z-40 border-b transition-all duration-500 ${
+          scrolled
+            ? "bg-cream/95 backdrop-blur-md border-burgundy/25 shadow-[0_1px_0_0_rgba(74,14,10,0.08)]"
+            : "bg-cream/70 backdrop-blur-sm border-burgundy/15"
         }`}
       >
+
         <div className="mx-auto grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:flex lg:max-w-[1400px] lg:justify-between lg:px-10">
           <Link
             to={PAGE_PATHS.home[locale]}
