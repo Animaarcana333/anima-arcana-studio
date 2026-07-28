@@ -1,20 +1,19 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, ChevronDown, Globe } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { Emblem } from "./Emblem";
 import { useI18n } from "@/lib/i18n";
 import { LOCALES, LOCALE_NAMES, PAGE_PATHS, type Locale } from "@/lib/translations";
 
-type NavKey = "home" | "about" | "experiences" | "photography" | "apothecary" | "school" | "journal" | "contact";
+type NavKey = "home" | "experiences" | "photography" | "apothecary" | "school" | "about" | "contact";
 
 const NAV_KEYS: NavKey[] = [
   "home",
-  "about",
   "experiences",
   "photography",
   "apothecary",
   "school",
-  "journal",
+  "about",
   "contact",
 ];
 
@@ -23,7 +22,6 @@ export function SiteNav() {
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [expExpanded, setExpExpanded] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
 
   useEffect(() => {
@@ -40,14 +38,6 @@ export function SiteNav() {
     };
   }, [open]);
 
-  const experiencesChildren = [
-    { to: "/experiences/returning-body", label: t.experiencesMenu.returningBody },
-    { to: "/experiences/tvm", label: t.experiencesMenu.tvm },
-    { to: "/experiences/tarot", label: t.experiencesMenu.tarot },
-    { to: "/experiences/reiki", label: t.experiencesMenu.reiki },
-    { to: "/experiences/kundalini", label: t.experiencesMenu.kundalini },
-  ];
-
   const switchLocale = (next: Locale) => {
     setLangOpen(false);
     setOpen(false);
@@ -63,7 +53,6 @@ export function SiteNav() {
             : "bg-cream/70 backdrop-blur-sm border-burgundy/15"
         }`}
       >
-
         <div className="mx-auto grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:flex lg:max-w-[1400px] lg:justify-between lg:px-10">
           <Link
             to={PAGE_PATHS.home[locale]}
@@ -82,43 +71,25 @@ export function SiteNav() {
           <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
             {NAV_KEYS.map((key) => {
               const to = PAGE_PATHS[key][locale];
-              const isExperiences = key === "experiences";
               return (
-                <div key={key} className="group relative">
-                  <Link
-                    to={to}
-                    className="text-[12px] uppercase tracking-[0.22em] text-ink/80 hover:text-burgundy transition-colors flex items-center gap-1"
-                    activeProps={{ className: "text-burgundy" }}
-                    activeOptions={{ exact: key === "home" }}
-                  >
-                    {t.nav[key]}
-                    {isExperiences ? <ChevronDown className="h-3 w-3" /> : null}
-                  </Link>
-                  {isExperiences ? (
-                    <div className="pointer-events-none absolute left-1/2 top-full mt-4 w-80 -translate-x-1/2 translate-y-2 opacity-0 transition-all duration-500 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
-                      <div className="border border-burgundy/20 bg-cream shadow-xl">
-                        <div className="p-2">
-                          {experiencesChildren.map((c) => (
-                            <Link
-                              key={c.to}
-                              to={c.to}
-                              className="block px-4 py-3 font-display text-lg text-ink/85 hover:bg-parchment/60 hover:text-burgundy transition-colors"
-                            >
-                              {c.label}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  ) : null}
-                </div>
+                <Link
+                  key={key}
+                  to={to}
+                  className="text-[12px] uppercase tracking-[0.22em] text-ink/80 hover:text-burgundy transition-colors"
+                  activeProps={{ className: "text-burgundy" }}
+                  activeOptions={{ exact: key === "home" }}
+                >
+                  {t.nav[key]}
+                </Link>
               );
             })}
           </nav>
 
           <div className="flex shrink-0 items-center gap-3">
-            {/* Desktop language selector */}
-            <div className="hidden lg:flex items-center gap-1 border-l border-burgundy/25 pl-4" aria-label={t.nav.language}>
+            <div
+              className="hidden lg:flex items-center gap-1 border-l border-burgundy/25 pl-4"
+              aria-label={t.nav.language}
+            >
               {LOCALES.map((l, i) => (
                 <button
                   key={l}
@@ -134,10 +105,6 @@ export function SiteNav() {
               ))}
             </div>
 
-
-
-
-            {/* Mobile language button */}
             <button
               onClick={() => setLangOpen((v) => !v)}
               className="lg:hidden flex items-center gap-1 text-[11px] tracking-[0.24em] text-burgundy p-2"
@@ -159,7 +126,6 @@ export function SiteNav() {
           </div>
         </div>
 
-        {/* Mobile language dropdown */}
         {langOpen ? (
           <div className="lg:hidden border-t border-burgundy/15 bg-cream/95 backdrop-blur-md">
             <div className="mx-auto flex max-w-[1400px] items-center justify-center gap-2 px-5 py-3">
@@ -181,7 +147,6 @@ export function SiteNav() {
         ) : null}
       </header>
 
-      {/* Mobile sheet */}
       <div
         className={`fixed inset-0 z-30 lg:hidden transition-opacity duration-500 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
@@ -192,35 +157,6 @@ export function SiteNav() {
           <nav className="flex flex-col gap-1" aria-label="Mobile">
             {NAV_KEYS.map((key) => {
               const to = PAGE_PATHS[key][locale];
-              if (key === "experiences") {
-                return (
-                  <div key={key} className="border-b border-burgundy/15 py-2">
-                    <button
-                      onClick={() => setExpExpanded((v) => !v)}
-                      className="flex w-full items-center justify-between py-3 text-left"
-                    >
-                      <span className="font-display text-3xl text-burgundy">{t.nav.experiences}</span>
-                      <ChevronDown
-                        className={`h-5 w-5 text-burgundy transition-transform ${expExpanded ? "rotate-180" : ""}`}
-                      />
-                    </button>
-                    {expExpanded ? (
-                      <div className="flex flex-col gap-2 pb-4 pl-4">
-                        {experiencesChildren.map((c) => (
-                          <Link
-                            key={c.to}
-                            to={c.to}
-                            onClick={() => setOpen(false)}
-                            className="py-1 text-[13px] uppercase tracking-[0.2em] text-ink/75"
-                          >
-                            {c.label}
-                          </Link>
-                        ))}
-                      </div>
-                    ) : null}
-                  </div>
-                );
-              }
               return (
                 <Link
                   key={key}
@@ -248,10 +184,8 @@ export function SiteNav() {
               </button>
             ))}
           </div>
-
         </div>
       </div>
     </>
   );
 }
-
