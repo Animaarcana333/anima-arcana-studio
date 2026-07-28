@@ -191,8 +191,7 @@ export function HomeContent() {
           </div>
           <div className="space-y-24 md:space-y-32">
             {h.pathways.map((p, i) => {
-              const media = pathwayMedia[i];
-              const primary = media.offerings[0]?.path ?? PAGE_PATHS.experiences[locale];
+              const media = doorways[i];
               return (
                 <article
                   key={p.title}
@@ -200,7 +199,7 @@ export function HomeContent() {
                     i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
                   }`}
                 >
-                  <Link to={primary} className="group relative block overflow-hidden">
+                  <Link to={media.to} className="group relative block overflow-hidden">
                     <img
                       src={media.src}
                       alt={p.title}
@@ -219,45 +218,26 @@ export function HomeContent() {
                   <div className="min-w-0 px-2">
                     <p className="text-sacred text-[10px] text-burgundy">{p.eyebrow}</p>
                     <h3 className="mt-4 font-display text-4xl text-burgundy sm:text-5xl">
-                      <Link to={primary} className="transition-colors hover:text-wine">
+                      <Link to={media.to} className="transition-colors hover:text-wine">
                         {p.title}
                       </Link>
                     </h3>
                     <div className="mt-5 h-px w-16 bg-burgundy/40" />
-                    <ul className="mt-6 space-y-2">
-                      {p.offerings.map((label, j) => {
-                        const to = media.offerings[j]?.path ?? primary;
-                        return (
-                          <li key={label}>
-                            <Link
-                              to={to}
-                              className="group inline-flex items-start gap-3 font-display text-xl italic text-ink/85 transition-colors hover:text-burgundy"
-                            >
-                              <span className="mt-3 block h-1 w-1 rotate-45 bg-gold" />
-                              <span className="border-b border-transparent group-hover:border-burgundy/40">
-                                {label}
-                              </span>
-                            </Link>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                    <blockquote className="mt-8 border-l border-burgundy/40 pl-5">
-                      <p className="font-display text-lg italic leading-relaxed text-ink/75">
-                        &ldquo;{p.quote}&rdquo;
-                      </p>
-                    </blockquote>
+                    <p className="mt-6 font-display text-xl italic leading-relaxed text-ink/80 sm:text-2xl">
+                      {p.description}
+                    </p>
                     <Link
-                      to={primary}
+                      to={media.to}
                       className="mt-8 inline-flex items-center border-b border-burgundy pb-1 text-[11px] uppercase tracking-[0.28em] text-burgundy transition-colors hover:border-transparent"
                     >
-                      {h.pathwaysCta} &nbsp;→
+                      {p.cta} &nbsp;→
                     </Link>
                   </div>
                 </article>
               );
             })}
           </div>
+
         </div>
       </section>
 
