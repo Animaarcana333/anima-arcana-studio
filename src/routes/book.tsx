@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, PageHeader } from "@/components/PageShell";
 import { CalendlyBooking } from "@/components/CalendlyBooking";
 import { EXPERIENCES } from "@/lib/experiences";
@@ -35,7 +35,7 @@ function Book() {
                 <p className="mt-2 text-sm italic text-ink/70">{e.poeticSubtitle}</p>
               </div>
               <div className="flex items-center gap-3">
-                <Link to="/experiences/$slug" params={{ slug: e.slug }} className="text-[11px] uppercase tracking-[0.24em] text-burgundy link-underline">Read more</Link>
+                <a href={`/experiences#${e.slug}`} className="text-[11px] uppercase tracking-[0.24em] text-burgundy link-underline">Read more</a>
                 <CalendlyBooking url={e.calendly} label="Schedule" />
               </div>
             </div>

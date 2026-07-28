@@ -4,8 +4,6 @@ import { Emblem, Divider, Star, Watermark } from "@/components/Emblem";
 import returningBody from "@/assets/photos/returning-body.jpg.asset.json";
 import tvm from "@/assets/photos/tvm.jpg.asset.json";
 import tarot from "@/assets/photos/tarot.jpg.asset.json";
-import reiki from "@/assets/photos/reiki.jpg.asset.json";
-import kundalini from "@/assets/photos/kundalini.jpg.asset.json";
 import bodyEarth from "@/assets/photos/body-earth.jpg.asset.json";
 import apothecaryHands from "@/assets/photos/apothecary-hands.jpg.asset.json";
 import { useI18n } from "@/lib/i18n";
@@ -19,45 +17,29 @@ import type React from "react";
  */
 const RITUAL_GRADE = "sepia(0.14) saturate(0.92) contrast(1.05) brightness(1.02)";
 
-// Pathway-specific media. Each entry pairs a photograph with the destination
-// links for its offerings. Reiki uses object-position to preserve a respectful
-// crop of the original image while keeping the healer's hand in frame.
-type PathwayMedia = {
+// Four editorial doorways. Each pathway is paired with a photograph and the
+// route it opens onto. Reiki-style crops are unused here; these images are
+// hero-scale and read well in centered composition.
+type DoorwayMedia = {
   src: string;
+  to: string;
   objectPosition?: string;
   credit?: string;
-  offerings: { path: string }[];
 };
-
-function buildPathwayMedia(
-  exp: (slug: string) => string,
-  page: (k: keyof typeof PAGE_PATHS) => string,
-): PathwayMedia[] {
-  return [
-    { src: returningBody.url, offerings: [{ path: exp("returning-body") }, { path: exp("tvm") }] },
-    { src: tarot.url, offerings: [{ path: exp("tarot") }] },
-    { src: reiki.url, objectPosition: "50% 30%", offerings: [{ path: exp("reiki") }] },
-    { src: kundalini.url, offerings: [{ path: exp("kundalini") }] },
-    {
-      src: bodyEarth.url,
-      credit: "Model · @the.soma.mystic",
-      offerings: [{ path: page("photography") }],
-    },
-    {
-      src: apothecaryHands.url,
-      offerings: [{ path: page("apothecary") }, { path: page("school") }],
-    },
-  ];
-}
-
 
 export function HomeContent() {
   const { locale, t } = useI18n();
   const h = t.home;
 
-  const exp = (slug: string) => `${PAGE_PATHS.experiences[locale]}/${slug}`;
   const page = (k: keyof typeof PAGE_PATHS) => PAGE_PATHS[k][locale];
-  const pathwayMedia = buildPathwayMedia(exp, page);
+
+  const doorways: DoorwayMedia[] = [
+    { src: returningBody.url, to: page("experiences") },
+    { src: bodyEarth.url, to: page("photography"), credit: "Model · @the.soma.mystic" },
+    { src: apothecaryHands.url, to: page("apothecary") },
+    { src: tarot.url, to: page("school") },
+  ];
+
 
   return (
     <PageShell>
@@ -207,8 +189,7 @@ export function HomeContent() {
           </div>
           <div className="space-y-24 md:space-y-32">
             {h.pathways.map((p, i) => {
-              const media = pathwayMedia[i];
-              const primary = media.offerings[0]?.path ?? PAGE_PATHS.experiences[locale];
+              const media = doorways[i];
               return (
                 <article
                   key={p.title}
@@ -216,7 +197,7 @@ export function HomeContent() {
                     i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
                   }`}
                 >
-                  <Link to={primary} className="group relative block overflow-hidden">
+                  <Link to={media.to} className="group relative block overflow-hidden">
                     <img
                       src={media.src}
                       alt={p.title}
@@ -235,45 +216,26 @@ export function HomeContent() {
                   <div className="min-w-0 px-2">
                     <p className="text-sacred text-[10px] text-burgundy">{p.eyebrow}</p>
                     <h3 className="mt-4 font-display text-4xl text-burgundy sm:text-5xl">
-                      <Link to={primary} className="transition-colors hover:text-wine">
+                      <Link to={media.to} className="transition-colors hover:text-wine">
                         {p.title}
                       </Link>
                     </h3>
                     <div className="mt-5 h-px w-16 bg-burgundy/40" />
-                    <ul className="mt-6 space-y-2">
-                      {p.offerings.map((label, j) => {
-                        const to = media.offerings[j]?.path ?? primary;
-                        return (
-                          <li key={label}>
-                            <Link
-                              to={to}
-                              className="group inline-flex items-start gap-3 font-display text-xl italic text-ink/85 transition-colors hover:text-burgundy"
-                            >
-                              <span className="mt-3 block h-1 w-1 rotate-45 bg-gold" />
-                              <span className="border-b border-transparent group-hover:border-burgundy/40">
-                                {label}
-                              </span>
-                            </Link>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                    <blockquote className="mt-8 border-l border-burgundy/40 pl-5">
-                      <p className="font-display text-lg italic leading-relaxed text-ink/75">
-                        &ldquo;{p.quote}&rdquo;
-                      </p>
-                    </blockquote>
+                    <p className="mt-6 font-display text-xl italic leading-relaxed text-ink/80 sm:text-2xl">
+                      {p.description}
+                    </p>
                     <Link
-                      to={primary}
+                      to={media.to}
                       className="mt-8 inline-flex items-center border-b border-burgundy pb-1 text-[11px] uppercase tracking-[0.28em] text-burgundy transition-colors hover:border-transparent"
                     >
-                      {h.pathwaysCta} &nbsp;→
+                      {p.cta} &nbsp;→
                     </Link>
                   </div>
                 </article>
               );
             })}
           </div>
+
         </div>
       </section>
 
