@@ -43,13 +43,6 @@ type Dict = {
     close: string;
     language: string;
   };
-  experiencesMenu: {
-    returningBody: string;
-    tvm: string;
-    tarot: string;
-    reiki: string;
-    kundalini: string;
-  };
   home: {
     heroEyebrow: string;
     heroTitle1: string;
@@ -69,12 +62,11 @@ type Dict = {
     welcomeHome: string;
     pathwaysEyebrow: string;
     pathwaysTitle: string;
-    pathwaysCta: string;
     pathways: Array<{
       eyebrow: string;
       title: string;
-      offerings: string[];
-      quote: string;
+      description: string;
+      cta: string;
     }>;
     finalTitle: string;
   };
@@ -87,21 +79,14 @@ const en: Dict = {
     about: "About",
     experiences: "Experiences",
     photography: "Photography",
-    apothecary: "Apothecary",
-    school: "School",
+    apothecary: "The Living Apothecary",
+    school: "Arcana School",
     journal: "Journal",
     contact: "Contact",
     bookCta: "Book an Experience",
     menu: "Menu",
     close: "Close",
     language: "Language",
-  },
-  experiencesMenu: {
-    returningBody: "The Returning Body",
-    tvm: "Triple Vagal Nerve Method",
-    tarot: "Intuitive Tarot Readings",
-    reiki: "Reiki",
-    kundalini: "Kundalini Life Force Activation Ceremony",
   },
   home: {
     heroEyebrow: "Anima Arcana",
@@ -122,47 +107,38 @@ const en: Dict = {
     offersP1:
       "Embodied healing, energy work, intuitive guidance, ritual photography, botanical preparations and tarot education.",
     offersP2:
-      "Through bodywork, nervous-system practices, Reiki, Kundalini Life Force Activation, tarot, photography and plant wisdom, each pathway offers a different way to return to yourself.",
+      "Through bodywork, nervous-system practices, Reiki, Kundalini Life Force Activation, tarot, photography and plant wisdom, every path offers a different way to return to yourself.",
     welcomeHome: "Welcome home.",
-    pathwaysEyebrow: "Six pathways",
-    pathwaysTitle: "Choose Your Path",
-    pathwaysCta: "Enter this path",
+    pathwaysEyebrow: "Choose your path",
+    pathwaysTitle: "Four Doorways",
     pathways: [
       {
         eyebrow: "Pathway I",
-        title: "Return to the Body",
-        offerings: ["The Returning Body", "Triple Vagal Nerve Method"],
-        quote: "Healing begins where the body feels safe enough to speak.",
+        title: "Experiences",
+        description:
+          "Hands-on therapies, nervous-system practices, energy work and intuitive guidance to reconnect body, mind and soul.",
+        cta: "Explore Experiences",
       },
       {
         eyebrow: "Pathway II",
-        title: "Listen to the Soul",
-        offerings: ["Intuitive Tarot Readings"],
-        quote: "Symbols become mirrors when we are ready to see.",
+        title: "Photography",
+        description:
+          "Artistic expression where body and landscape become one with nature.",
+        cta: "Explore Photography",
       },
       {
         eyebrow: "Pathway III",
-        title: "Return to Stillness",
-        offerings: ["Reiki"],
-        quote: "Stillness creates the space in which energy can be heard.",
+        title: "The Living Apothecary",
+        description:
+          "Handcrafted botanical preparations inspired by traditional plant wisdom and the healing intelligence of nature.",
+        cta: "Visit the Apothecary",
       },
       {
         eyebrow: "Pathway IV",
-        title: "Awaken the Life Force",
-        offerings: ["Kundalini Life Force Activation Ceremony"],
-        quote: "The deepest transformations cannot be forced. They are invited.",
-      },
-      {
-        eyebrow: "Pathway V",
-        title: "Become Part of Nature",
-        offerings: ["Body & Earth Ritual Photography"],
-        quote: "Where the landscape remembers your original shape.",
-      },
-      {
-        eyebrow: "Pathway VI",
-        title: "Carry the Journey Home",
-        offerings: ["The Living Apothecary", "Arcana School"],
-        quote: "Because transformation continues long after the session ends.",
+        title: "Arcana School",
+        description:
+          "Learn timeless practices that remain with you long after the experience has ended.",
+        cta: "Enter the School",
       },
     ],
     finalTitle: "Are you ready to return to what lives within?",
@@ -176,21 +152,14 @@ const es: Dict = {
     about: "Sobre mí",
     experiences: "Experiencias",
     photography: "Fotografía",
-    apothecary: "Botica",
-    school: "Escuela",
+    apothecary: "La Botica Viviente",
+    school: "Escuela Arcana",
     journal: "Diario",
     contact: "Contacto",
     bookCta: "Reserva una Experiencia",
     menu: "Menú",
     close: "Cerrar",
     language: "Idioma",
-  },
-  experiencesMenu: {
-    returningBody: "El Cuerpo que Regresa",
-    tvm: "Método del Triple Nervio Vago",
-    tarot: "Lecturas Intuitivas de Tarot",
-    reiki: "Reiki",
-    kundalini: "Ceremonia de Activación de la Fuerza Vital Kundalini",
   },
   home: {
     heroEyebrow: "Anima Arcana",
@@ -213,45 +182,36 @@ const es: Dict = {
     offersP2:
       "A través del trabajo corporal, las prácticas para el sistema nervioso, Reiki, la Activación de la Fuerza Vital Kundalini, el tarot, la fotografía y la sabiduría de las plantas, cada camino ofrece una manera diferente de regresar a ti.",
     welcomeHome: "Bienvenido a casa.",
-    pathwaysEyebrow: "Seis caminos",
-    pathwaysTitle: "Elige tu Camino",
-    pathwaysCta: "Entra en este camino",
+    pathwaysEyebrow: "Elige tu camino",
+    pathwaysTitle: "Cuatro Umbrales",
     pathways: [
       {
         eyebrow: "Camino I",
-        title: "Regresa al Cuerpo",
-        offerings: ["El Cuerpo que Regresa", "Método del Triple Nervio Vago"],
-        quote: "La sanación comienza allí donde el cuerpo se siente lo bastante seguro para hablar.",
+        title: "Experiencias",
+        description:
+          "Terapias manuales, prácticas para el sistema nervioso, trabajo energético y guía intuitiva para reconectar cuerpo, mente y alma.",
+        cta: "Explorar Experiencias",
       },
       {
         eyebrow: "Camino II",
-        title: "Escucha al Alma",
-        offerings: ["Lecturas Intuitivas de Tarot"],
-        quote: "Los símbolos se vuelven espejos cuando estamos listos para ver.",
+        title: "Fotografía",
+        description:
+          "Expresión artística donde el cuerpo y el paisaje se vuelven uno con la naturaleza.",
+        cta: "Explorar Fotografía",
       },
       {
         eyebrow: "Camino III",
-        title: "Regresa a la Quietud",
-        offerings: ["Reiki"],
-        quote: "La quietud crea el espacio donde la energía puede ser escuchada.",
+        title: "La Botica Viviente",
+        description:
+          "Preparados botánicos hechos a mano, inspirados en la sabiduría tradicional de las plantas y en la inteligencia sanadora de la naturaleza.",
+        cta: "Visitar la Botica",
       },
       {
         eyebrow: "Camino IV",
-        title: "Despierta la Fuerza Vital",
-        offerings: ["Ceremonia de Activación de la Fuerza Vital Kundalini"],
-        quote: "Las transformaciones más profundas no pueden forzarse. Se invitan.",
-      },
-      {
-        eyebrow: "Camino V",
-        title: "Vuélvete Parte de la Naturaleza",
-        offerings: ["Fotografía Ritual Cuerpo y Tierra"],
-        quote: "Donde el paisaje recuerda tu forma original.",
-      },
-      {
-        eyebrow: "Camino VI",
-        title: "Lleva el Viaje a Casa",
-        offerings: ["La Botica Viviente", "Escuela Arcana"],
-        quote: "Porque la transformación continúa mucho después de que termina la sesión.",
+        title: "Escuela Arcana",
+        description:
+          "Aprende prácticas atemporales que permanecen contigo mucho después de que termina la experiencia.",
+        cta: "Entrar a la Escuela",
       },
     ],
     finalTitle: "¿Estás lista para regresar a lo que vive dentro de ti?",
@@ -265,21 +225,14 @@ const it: Dict = {
     about: "Chi sono",
     experiences: "Esperienze",
     photography: "Fotografia",
-    apothecary: "Spezieria",
-    school: "Scuola",
+    apothecary: "La Spezieria Vivente",
+    school: "Scuola Arcana",
     journal: "Diario",
     contact: "Contatti",
     bookCta: "Prenota un'Esperienza",
     menu: "Menu",
     close: "Chiudi",
     language: "Lingua",
-  },
-  experiencesMenu: {
-    returningBody: "Il Corpo che Ritorna",
-    tvm: "Metodo del Triplo Nervo Vago",
-    tarot: "Letture Intuitive dei Tarocchi",
-    reiki: "Reiki",
-    kundalini: "Cerimonia di Attivazione della Forza Vitale Kundalini",
   },
   home: {
     heroEyebrow: "Anima Arcana",
@@ -302,45 +255,36 @@ const it: Dict = {
     offersP2:
       "Attraverso il lavoro sul corpo, le pratiche dedicate al sistema nervoso, il Reiki, l'Attivazione della Forza Vitale Kundalini, i tarocchi, la fotografia e la saggezza delle piante, ogni cammino offre un modo diverso di ritornare a te.",
     welcomeHome: "Bentornato a casa.",
-    pathwaysEyebrow: "Sei cammini",
-    pathwaysTitle: "Scegli il tuo Cammino",
-    pathwaysCta: "Entra in questo cammino",
+    pathwaysEyebrow: "Scegli il tuo cammino",
+    pathwaysTitle: "Quattro Soglie",
     pathways: [
       {
         eyebrow: "Cammino I",
-        title: "Ritorna al Corpo",
-        offerings: ["Il Corpo che Ritorna", "Metodo del Triplo Nervo Vago"],
-        quote: "La guarigione inizia dove il corpo si sente abbastanza al sicuro per parlare.",
+        title: "Esperienze",
+        description:
+          "Terapie manuali, pratiche dedicate al sistema nervoso, lavoro energetico e guida intuitiva per riconnettere corpo, mente e anima.",
+        cta: "Esplora le Esperienze",
       },
       {
         eyebrow: "Cammino II",
-        title: "Ascolta l'Anima",
-        offerings: ["Letture Intuitive dei Tarocchi"],
-        quote: "I simboli diventano specchi quando siamo pronti a vedere.",
+        title: "Fotografia",
+        description:
+          "Espressione artistica in cui il corpo e il paesaggio diventano un tutt'uno con la natura.",
+        cta: "Esplora la Fotografia",
       },
       {
         eyebrow: "Cammino III",
-        title: "Ritorna alla Quiete",
-        offerings: ["Reiki"],
-        quote: "La quiete crea lo spazio in cui l'energia può essere ascoltata.",
+        title: "La Spezieria Vivente",
+        description:
+          "Preparazioni botaniche fatte a mano, ispirate alla saggezza tradizionale delle piante e all'intelligenza guaritrice della natura.",
+        cta: "Visita la Spezieria",
       },
       {
         eyebrow: "Cammino IV",
-        title: "Risveglia la Forza Vitale",
-        offerings: ["Cerimonia di Attivazione della Forza Vitale Kundalini"],
-        quote: "Le trasformazioni più profonde non possono essere forzate. Vengono invitate.",
-      },
-      {
-        eyebrow: "Cammino V",
-        title: "Diventa Parte della Natura",
-        offerings: ["Fotografia Rituale Corpo e Terra"],
-        quote: "Dove il paesaggio ricorda la tua forma originaria.",
-      },
-      {
-        eyebrow: "Cammino VI",
-        title: "Porta il Viaggio a Casa",
-        offerings: ["La Spezieria Vivente", "Scuola Arcana"],
-        quote: "Perché la trasformazione continua molto dopo la fine della sessione.",
+        title: "Scuola Arcana",
+        description:
+          "Apprendi pratiche senza tempo che restano con te molto dopo la fine dell'esperienza.",
+        cta: "Entra nella Scuola",
       },
     ],
     finalTitle: "Sei pronto a ritornare a ciò che vive dentro di te?",
