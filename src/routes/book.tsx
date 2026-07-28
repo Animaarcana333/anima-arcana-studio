@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, PageHeader } from "@/components/PageShell";
 import { CalendlyBooking } from "@/components/CalendlyBooking";
 import { EXPERIENCES } from "@/lib/experiences";
