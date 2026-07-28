@@ -19,45 +19,29 @@ import type React from "react";
  */
 const RITUAL_GRADE = "sepia(0.14) saturate(0.92) contrast(1.05) brightness(1.02)";
 
-// Pathway-specific media. Each entry pairs a photograph with the destination
-// links for its offerings. Reiki uses object-position to preserve a respectful
-// crop of the original image while keeping the healer's hand in frame.
-type PathwayMedia = {
+// Four editorial doorways. Each pathway is paired with a photograph and the
+// route it opens onto. Reiki-style crops are unused here; these images are
+// hero-scale and read well in centered composition.
+type DoorwayMedia = {
   src: string;
+  to: string;
   objectPosition?: string;
   credit?: string;
-  offerings: { path: string }[];
 };
-
-function buildPathwayMedia(
-  exp: (slug: string) => string,
-  page: (k: keyof typeof PAGE_PATHS) => string,
-): PathwayMedia[] {
-  return [
-    { src: returningBody.url, offerings: [{ path: exp("returning-body") }, { path: exp("tvm") }] },
-    { src: tarot.url, offerings: [{ path: exp("tarot") }] },
-    { src: reiki.url, objectPosition: "50% 30%", offerings: [{ path: exp("reiki") }] },
-    { src: kundalini.url, offerings: [{ path: exp("kundalini") }] },
-    {
-      src: bodyEarth.url,
-      credit: "Model · @the.soma.mystic",
-      offerings: [{ path: page("photography") }],
-    },
-    {
-      src: apothecaryHands.url,
-      offerings: [{ path: page("apothecary") }, { path: page("school") }],
-    },
-  ];
-}
-
 
 export function HomeContent() {
   const { locale, t } = useI18n();
   const h = t.home;
 
-  const exp = (slug: string) => `${PAGE_PATHS.experiences[locale]}/${slug}`;
   const page = (k: keyof typeof PAGE_PATHS) => PAGE_PATHS[k][locale];
-  const pathwayMedia = buildPathwayMedia(exp, page);
+
+  const doorways: DoorwayMedia[] = [
+    { src: returningBody.url, to: page("experiences") },
+    { src: bodyEarth.url, to: page("photography"), credit: "Model · @the.soma.mystic" },
+    { src: apothecaryHands.url, to: page("apothecary") },
+    { src: tarot.url, to: page("school") },
+  ];
+
 
   return (
     <PageShell>
