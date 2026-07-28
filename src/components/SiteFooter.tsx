@@ -30,11 +30,11 @@ export function SiteFooter() {
           <div>
             <h4 className="text-sacred text-[10px] text-burgundy">Practices</h4>
             <ul className="mt-5 space-y-2 text-sm text-ink/80">
-              <li><Link to="/experiences/returning-body" className="hover:text-burgundy">The Returning Body</Link></li>
-              <li><Link to="/experiences/reiki" className="hover:text-burgundy">Reiki</Link></li>
-              <li><Link to="/experiences/tvm" className="hover:text-burgundy">Triple Vagal Nerve Method</Link></li>
-              <li><Link to="/experiences/kundalini" className="hover:text-burgundy">Kundalini Life Force</Link></li>
-              <li><Link to="/experiences/tarot" className="hover:text-burgundy">Tarot Readings</Link></li>
+              <li><a href="/experiences#returning-body" className="hover:text-burgundy">The Returning Body</a></li>
+              <li><a href="/experiences#reiki" className="hover:text-burgundy">Reiki</a></li>
+              <li><a href="/experiences#tvm" className="hover:text-burgundy">Triple Vagal Nerve Method</a></li>
+              <li><a href="/experiences#kundalini" className="hover:text-burgundy">Kundalini Life Force</a></li>
+              <li><a href="/experiences#tarot" className="hover:text-burgundy">Tarot Readings</a></li>
             </ul>
           </div>
           <div>
