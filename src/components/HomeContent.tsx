@@ -4,8 +4,6 @@ import { Emblem, Divider, Star, Watermark } from "@/components/Emblem";
 import returningBody from "@/assets/photos/returning-body.jpg.asset.json";
 import tvm from "@/assets/photos/tvm.jpg.asset.json";
 import tarot from "@/assets/photos/tarot.jpg.asset.json";
-import reiki from "@/assets/photos/reiki.jpg.asset.json";
-import kundalini from "@/assets/photos/kundalini.jpg.asset.json";
 import bodyEarth from "@/assets/photos/body-earth.jpg.asset.json";
 import apothecaryHands from "@/assets/photos/apothecary-hands.jpg.asset.json";
 import { useI18n } from "@/lib/i18n";
