@@ -49,11 +49,11 @@ export function SiteFooter() {
           <div>
             <h4 className="text-sacred text-[10px] text-burgundy">Fine Print</h4>
             <ul className="mt-5 space-y-2 text-sm text-ink/80">
-              <li><Link to="/legal/privacy" className="hover:text-burgundy">Privacy Policy</Link></li>
-              <li><Link to="/legal/terms" className="hover:text-burgundy">Terms & Conditions</Link></li>
-              <li><Link to="/legal/refund" className="hover:text-burgundy">Refund Policy</Link></li>
-              <li><Link to="/legal/shipping" className="hover:text-burgundy">Shipping</Link></li>
-              <li><Link to="/legal/disclaimer" className="hover:text-burgundy">Wellness Disclaimer</Link></li>
+              <li><Link to="/legal/$slug" params={{ slug: "privacy" }} className="hover:text-burgundy">Privacy Policy</Link></li>
+              <li><Link to="/legal/$slug" params={{ slug: "terms" }} className="hover:text-burgundy">Terms & Conditions</Link></li>
+              <li><Link to="/legal/$slug" params={{ slug: "refund" }} className="hover:text-burgundy">Refund Policy</Link></li>
+              <li><Link to="/legal/$slug" params={{ slug: "shipping" }} className="hover:text-burgundy">Shipping</Link></li>
+              <li><Link to="/legal/$slug" params={{ slug: "disclaimer" }} className="hover:text-burgundy">Wellness Disclaimer</Link></li>
             </ul>
           </div>
         </div>
