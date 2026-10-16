@@ -9,47 +9,22 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SchoolRouteImport } from './routes/school'
-import { Route as PhotographyRouteImport } from './routes/photography'
-import { Route as JournalRouteImport } from './routes/journal'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as BookRouteImport } from './routes/book'
-import { Route as ApothecaryRouteImport } from './routes/apothecary'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ItIndexRouteImport } from './routes/it.index'
-import { Route as ExperiencesIndexRouteImport } from './routes/experiences.index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ApothecaryRouteImport } from './routes/apothecary'
+import { Route as BookRouteImport } from './routes/book'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as JournalRouteImport } from './routes/journal'
+import { Route as PhotographyRouteImport } from './routes/photography'
+import { Route as SchoolRouteImport } from './routes/school'
 import { Route as EsIndexRouteImport } from './routes/es.index'
+import { Route as ExperiencesIndexRouteImport } from './routes/experiences.index'
+import { Route as ItIndexRouteImport } from './routes/it.index'
 import { Route as LegalSlugRouteImport } from './routes/legal.$slug'
 
-const SchoolRoute = SchoolRouteImport.update({
-  id: '/school',
-  path: '/school',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PhotographyRoute = PhotographyRouteImport.update({
-  id: '/photography',
-  path: '/photography',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const JournalRoute = JournalRouteImport.update({
-  id: '/journal',
-  path: '/journal',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BookRoute = BookRouteImport.update({
-  id: '/book',
-  path: '/book',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApothecaryRoute = ApothecaryRouteImport.update({
-  id: '/apothecary',
-  path: '/apothecary',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -57,14 +32,39 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ApothecaryRoute = ApothecaryRouteImport.update({
+  id: '/apothecary',
+  path: '/apothecary',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ItIndexRoute = ItIndexRouteImport.update({
-  id: '/it/',
-  path: '/it/',
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalRoute = JournalRouteImport.update({
+  id: '/journal',
+  path: '/journal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PhotographyRoute = PhotographyRouteImport.update({
+  id: '/photography',
+  path: '/photography',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SchoolRoute = SchoolRouteImport.update({
+  id: '/school',
+  path: '/school',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsIndexRoute = EsIndexRouteImport.update({
+  id: '/es/',
+  path: '/es/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExperiencesIndexRoute = ExperiencesIndexRouteImport.update({
@@ -72,9 +72,9 @@ const ExperiencesIndexRoute = ExperiencesIndexRouteImport.update({
   path: '/experiences/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EsIndexRoute = EsIndexRouteImport.update({
-  id: '/es/',
-  path: '/es/',
+const ItIndexRoute = ItIndexRouteImport.update({
+  id: '/it/',
+  path: '/it/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LegalSlugRoute = LegalSlugRouteImport.update({
@@ -188,46 +188,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/school': {
-      id: '/school'
-      path: '/school'
-      fullPath: '/school'
-      preLoaderRoute: typeof SchoolRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/photography': {
-      id: '/photography'
-      path: '/photography'
-      fullPath: '/photography'
-      preLoaderRoute: typeof PhotographyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/journal': {
-      id: '/journal'
-      path: '/journal'
-      fullPath: '/journal'
-      preLoaderRoute: typeof JournalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/book': {
-      id: '/book'
-      path: '/book'
-      fullPath: '/book'
-      preLoaderRoute: typeof BookRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/apothecary': {
-      id: '/apothecary'
-      path: '/apothecary'
-      fullPath: '/apothecary'
-      preLoaderRoute: typeof ApothecaryRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -237,18 +202,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/apothecary': {
+      id: '/apothecary'
+      path: '/apothecary'
+      fullPath: '/apothecary'
+      preLoaderRoute: typeof ApothecaryRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/it/': {
-      id: '/it/'
-      path: '/it'
-      fullPath: '/it/'
-      preLoaderRoute: typeof ItIndexRouteImport
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journal': {
+      id: '/journal'
+      path: '/journal'
+      fullPath: '/journal'
+      preLoaderRoute: typeof JournalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/photography': {
+      id: '/photography'
+      path: '/photography'
+      fullPath: '/photography'
+      preLoaderRoute: typeof PhotographyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/school': {
+      id: '/school'
+      path: '/school'
+      fullPath: '/school'
+      preLoaderRoute: typeof SchoolRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es/': {
+      id: '/es/'
+      path: '/es'
+      fullPath: '/es/'
+      preLoaderRoute: typeof EsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/experiences/': {
@@ -258,11 +258,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperiencesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/es/': {
-      id: '/es/'
-      path: '/es'
-      fullPath: '/es/'
-      preLoaderRoute: typeof EsIndexRouteImport
+    '/it/': {
+      id: '/it/'
+      path: '/it'
+      fullPath: '/it/'
+      preLoaderRoute: typeof ItIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/legal/$slug': {
